@@ -1,0 +1,19 @@
+{
+  "name": "tv-no-signal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "biome check ."
+  },
+  "dependencies": {
+    "animejs": "^4.5.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.7",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}

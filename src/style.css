@@ -1,0 +1,53 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #000;
+}
+
+.screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #0000b4;
+}
+
+/* CRT scanlines + vignette */
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 2px,
+      rgb(0 0 0 / 0.22) 2px 4px
+    ),
+    radial-gradient(ellipse at center, transparent 55%, rgb(0 0 0 / 0.55) 100%);
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* right padding is smaller to offset the trailing letter-spacing */
+  padding: 0.35em 0.65em 0.35em 0.8em;
+  border: 0.08em solid currentColor;
+  background: #000;
+  font:
+    700 clamp(1.5rem, 6vw, 4rem) / 1 SimHei,
+    "Heiti SC",
+    "PingFang SC",
+    "Microsoft YaHei",
+    sans-serif;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+  text-shadow: 0 0 0.25em currentColor;
+  user-select: none;
+  will-change: transform;
+}
